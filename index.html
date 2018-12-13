@@ -23,6 +23,16 @@
 	div.e{
 		text-indent: 90px;
 	}
+	td, th {
+	  width: 2rem;
+	  height: 2rem;
+	  border: 1px solid #ccc;
+	  text-align: center;
+	}
+	td.decCell {
+		background: lightgreen;
+  		border-color: white;
+	}
 </style>
 </head>
 <body>
@@ -67,9 +77,9 @@
 							Arestas
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">Nova Aresta</a>
-							<a class="dropdown-item" href="#">Remover Aresta</a>
-							<a class="dropdown-item" href="#">Alterar Aresta</a>
+							<a class="dropdown-item" href="#" onclick="newEdge()">Nova Aresta</a>
+							<a class="dropdown-item" href="#" onclick="removeEdge()">Remover Aresta</a>
+							<a class="dropdown-item" href="#" onclick="modifyEdge()">Alterar Aresta</a>
 						</div>
 					</div>
 					<div class="Mais...">
@@ -78,6 +88,7 @@
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="#">Criar exercicio</a>
+							<a class="dropdown-item" href="#" onclick="markpath()">Ver caminho</a>
 							<a class="dropdown-item" href="#" onclick="createtable()">Ver Resposta</a>
 						</div>
 					</div>        
@@ -91,24 +102,7 @@
 					<div class="row">
 						<h4>Visualizacao do algoritmo</h4>
 						<div id="visual" style=" display:none">
-							<div class="a"><p>function Floyd_Warshall ()</p>
-								<div class="b"><p>for each edge (u,v)</p>
-									<div class="c">
-										<p>dist[u][v] <- w(u,v) </p>
-										<p>next[u][v] <- v</p>
-									</div>
-									<div class="b"><p>for k from 1 to |V|</p>
-										<div class="c"><p>for i from 1 to |V|</p>
-											<div class="d"><p>for j from 1 to |V|</p>
-												<div class="e"><p>if dist[i][j] > dist[i][k] + dist[k][j] then</p>
-													<p>dist[i][j] <- dist[i][k] + dist[k][j]</p>
-													<p>next[i][j] <- next[i][k]</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+
 						</div>
 					</div>
 					<div class="row">
